@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `boitesvitesse`;
 CREATE TABLE IF NOT EXISTS `boitesvitesse` (
   `idBoiteVitesse` int NOT NULL COMMENT 'Identifiant unique pour chaque boite de vitesse',
-  `modele` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Nom du modèle de la boite de vitesse',
-  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Type de boite de vitesse',
-  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Description de la boite de vitesse',
+  `modele` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nom du modèle de la boite de vitesse',
+  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Type de boite de vitesse',
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Description de la boite de vitesse',
   `prix` int DEFAULT NULL COMMENT 'Prix de la boite de vitesse',
   PRIMARY KEY (`idBoiteVitesse`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `carrosseries` (
   `materiaux` varchar(255) DEFAULT NULL COMMENT 'Matériaux de la carrosserie',
   `prix` int DEFAULT NULL COMMENT 'Prix de la carrosserie',
   PRIMARY KEY (`idCarrosserie`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `dateInscription` date DEFAULT NULL COMMENT 'Date d''inscription du client',
   `finAbonnement` date DEFAULT NULL COMMENT 'Date de fin d''abonnement du client',
   PRIMARY KEY (`idClient`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `client_environnement` (
   `idEnvironnement` int NOT NULL COMMENT 'ID de l''environnement qu''a créer le client',
   PRIMARY KEY (`idClient`,`idEnvironnement`),
   KEY `idEnvironnement` (`idEnvironnement`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `client_simulation` (
   `idSimulation` int NOT NULL COMMENT 'ID de la simulation qu''a créé le client',
   PRIMARY KEY (`idClient`,`idSimulation`),
   KEY `idSimulation` (`idSimulation`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `client_vehicule` (
   `idVehicule` int NOT NULL COMMENT 'ID du véhicule qu''a créé le client',
   PRIMARY KEY (`idClient`,`idVehicule`),
   KEY `idVehicule` (`idVehicule`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `environnements` (
   KEY `meteo` (`meteo`),
   KEY `sol` (`sol`),
   KEY `obstacle` (`obstacle`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -140,12 +140,12 @@ CREATE TABLE IF NOT EXISTS `environnements` (
 DROP TABLE IF EXISTS `extensionsarrière`;
 CREATE TABLE IF NOT EXISTS `extensionsarrière` (
   `idExtArr` int NOT NULL COMMENT 'Identifiant unique pour chaque extension arrière',
-  `chemin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Chemin vers le modèle 3D pour Unity',
-  `modele` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Nom du modèle d''extension arrière',
-  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Description de l''extension arrière',
+  `chemin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Chemin vers le modèle 3D pour Unity',
+  `modele` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nom du modèle d''extension arrière',
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Description de l''extension arrière',
   `prix` int DEFAULT NULL COMMENT 'Prix de l''extension arrière',
   PRIMARY KEY (`idExtArr`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -156,12 +156,12 @@ CREATE TABLE IF NOT EXISTS `extensionsarrière` (
 DROP TABLE IF EXISTS `extensionsavant`;
 CREATE TABLE IF NOT EXISTS `extensionsavant` (
   `idExtAv` int NOT NULL COMMENT 'Identifiant unique pour chaque extension avant',
-  `chemin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Chemin vers le modèle 3D pour Unity',
-  `modele` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Nom du modèle de l''extension avant',
-  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Description de l''extension avant',
+  `chemin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Chemin vers le modèle 3D pour Unity',
+  `modele` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nom du modèle de l''extension avant',
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Description de l''extension avant',
   `prix` int DEFAULT NULL COMMENT 'Prix de l''extension avant',
   PRIMARY KEY (`idExtAv`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -172,12 +172,12 @@ CREATE TABLE IF NOT EXISTS `extensionsavant` (
 DROP TABLE IF EXISTS `extensionstoit`;
 CREATE TABLE IF NOT EXISTS `extensionstoit` (
   `idExtToit` int NOT NULL COMMENT 'Identifiant unique pour chaque extension de toit',
-  `chemin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Chemin vers le modèle 3D pour Unity',
-  `modele` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Nom du modèle d''extension de toit',
-  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT 'Description de l''extension de toit',
+  `chemin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Chemin vers le modèle 3D pour Unity',
+  `modele` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nom du modèle d''extension de toit',
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Description de l''extension de toit',
   `prix` int DEFAULT NULL COMMENT 'Prix de l''extension de toit',
   PRIMARY KEY (`idExtToit`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `freins` (
   `description` varchar(255) DEFAULT NULL COMMENT 'Description des freins',
   `prix` int DEFAULT NULL COMMENT 'Prix des freins',
   PRIMARY KEY (`idFrein`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `meteo` (
   `chemin` varchar(255) DEFAULT NULL COMMENT 'Chemin du modèle 3D pour Unity',
   `description` varchar(255) DEFAULT NULL COMMENT 'Description de la météo',
   PRIMARY KEY (`idMeteo`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -228,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `moteurs` (
   `description` varchar(255) DEFAULT NULL COMMENT 'Description du moteur',
   `prix` int DEFAULT NULL COMMENT 'Prix du moteur',
   PRIMARY KEY (`idMoteur`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -242,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `obstacles` (
   `chemin` varchar(255) DEFAULT NULL COMMENT 'Chemin du modèle 3D pour Unity',
   `description` varchar(255) DEFAULT NULL COMMENT 'Description de l''obstacle',
   PRIMARY KEY (`idObstacle`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -259,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `roues` (
   `description` varchar(255) DEFAULT NULL COMMENT 'Description de la roue',
   `prix` int DEFAULT NULL COMMENT 'Prix de la roue',
   PRIMARY KEY (`idRoue`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -275,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `simulations` (
   `charge` varchar(255) DEFAULT NULL COMMENT 'Charge du véhicule lors la simulation',
   `consommation` varchar(255) DEFAULT NULL COMMENT 'Consommation du véhicule lors la simulation',
   PRIMARY KEY (`idSimulation`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -289,7 +289,7 @@ CREATE TABLE IF NOT EXISTS `sols` (
   `chemin` varchar(255) DEFAULT NULL COMMENT 'Chemin du modèle 3D pour Unity',
   `description` varchar(255) DEFAULT NULL COMMENT 'Description du sol',
   PRIMARY KEY (`idSol`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -306,7 +306,7 @@ CREATE TABLE IF NOT EXISTS `suspensions` (
   `description` varchar(255) DEFAULT NULL COMMENT 'Description de la suspension',
   `prix` int DEFAULT NULL COMMENT 'Prix de la suspension',
   PRIMARY KEY (`idSuspension`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -339,7 +339,7 @@ CREATE TABLE IF NOT EXISTS `vehicules` (
   KEY `idRoue` (`idRoue`),
   KEY `idSuspension` (`idSuspension`),
   KEY `idMoteur` (`idMoteur`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
