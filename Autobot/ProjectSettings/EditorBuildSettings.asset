@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Autobot.unity
+    guid: 7ea17d1bd9aa0d6419c329f332a48624
+  - enabled: 1
+    path: Assets/Scenes/Connexion.unity
+    guid: 8f5a36af81799cc4e9f25c05e8db3797
   m_configObjects: {}

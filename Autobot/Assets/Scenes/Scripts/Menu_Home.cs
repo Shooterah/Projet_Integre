@@ -9,7 +9,7 @@ public class Menu_Home : MonoBehaviour
     public new Camera camera;
 
     // Vitesse de la caméra (Duration de la translation d'un point A vers un point B)
-    public float duration = 0.5f;
+    public float duration = 0.05f;
 
     // Start is called before the first frame update
     void Start()
