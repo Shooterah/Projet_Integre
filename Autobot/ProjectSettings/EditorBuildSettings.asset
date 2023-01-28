@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Autobot.unity
+    path: Assets/Scenes/Accueil.unity
     guid: 7ea17d1bd9aa0d6419c329f332a48624
   - enabled: 1
-    path: Assets/Scenes/Connexion.unity
-    guid: 8f5a36af81799cc4e9f25c05e8db3797
+    path: "Assets/Scenes/Mentions_L\xE9gale.unity"
+    guid: 9f6fda56ff5f6334dabddb1a055226c9
   m_configObjects: {}
