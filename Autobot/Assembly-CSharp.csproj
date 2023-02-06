@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scenes\Scripts\Test_BDD.cs" />
-     <Compile Include="Assets\Scenes\Scripts\button_con.cs" />
      <Compile Include="Assets\Scenes\Scripts\Menu_Home.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

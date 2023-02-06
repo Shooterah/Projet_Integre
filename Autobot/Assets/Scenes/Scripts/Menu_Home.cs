@@ -22,16 +22,33 @@ public class Menu_Home : MonoBehaviour
     // Fonction qui permet de load la scène "Mentions_Légale"
     public void OnClickMentionsLegales()
     {
-        Debug.Log("Mentions Légale");
         SceneManager.LoadScene("Mentions_Légale");
     }
-
-   
 
     // Fonction qui permet de load la scène "Accueil"
     public void OnClickRetourMentions()
     {
         Debug.Log("Accueil");
         SceneManager.LoadScene("Accueil");
+    }
+
+    public void OnClickConnexion()
+    {
+        SceneManager.LoadScene("Connexion");
+    }
+
+    public void OnClickInscription()
+    {
+        SceneManager.LoadScene("Inscription");
+    }
+
+     public void OnClickParametres()
+    {
+        SceneManager.LoadScene("Parametres");
+    }
+
+         public void OnClickPco()
+    {
+        SceneManager.LoadScene("ProblemeCo");
     }
 }
