@@ -41,12 +41,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\object_rotate.cs" />
-     <Compile Include="Assets\Scenes\Scripts\Inscription.cs" />
+     <Compile Include="Assets\Scripts\Inscription.cs" />
      <Compile Include="Assets\Camera_moove.cs" />
-     <Compile Include="Assets\Scenes\Scripts\Connexion.cs" />
      <Compile Include="Assets\ray.cs" />
-     <Compile Include="Assets\Scenes\Scripts\BDD.cs" />
-     <Compile Include="Assets\Scenes\Scripts\Menu_Home.cs" />
+     <Compile Include="Assets\Scripts\Menu_Home.cs" />
+     <Compile Include="Assets\Scripts\Type_Véhicule.cs" />
+     <Compile Include="Assets\Scripts\BDD.cs" />
+     <Compile Include="Assets\Scripts\Connexion.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
