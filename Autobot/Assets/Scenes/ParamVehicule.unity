@@ -388,8 +388,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 58241500}
-        m_TargetAssemblyTypeName: type_vehicul, Assembly-CSharp
-        m_MethodName: "ChoixV\xE9hicule"
+        m_TargetAssemblyTypeName: Modif_Vehicule, Assembly-CSharp
+        m_MethodName: "ModifV\xE9hicule"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -447,10 +447,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 58241495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f129a0b05fd44458af2fd551111167, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b1e99ac4f7790842bdf31489a276d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Type: {fileID: 58241497}
+  Color: {fileID: 2115893369}
+  Cargaison: {fileID: 1521301643}
   prefab: {fileID: 0}
 --- !u!1 &73733356
 GameObject:
@@ -3922,7 +3924,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1135336734
 MonoBehaviour:
@@ -4835,6 +4849,7 @@ GameObject:
   - component: {fileID: 1521301645}
   - component: {fileID: 1521301644}
   - component: {fileID: 1521301643}
+  - component: {fileID: 1521301646}
   m_Layer: 5
   m_Name: Type de cargaison
   m_TagString: Untagged
@@ -4923,7 +4938,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1521301646}
+        m_TargetAssemblyTypeName: Modif_Vehicule, Assembly-CSharp
+        m_MethodName: "ModifV\xE9hicule"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1521301644
 MonoBehaviour:
@@ -4963,6 +4990,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521301641}
   m_CullTransparentMesh: 1
+--- !u!114 &1521301646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521301641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1e99ac4f7790842bdf31489a276d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: {fileID: 58241497}
+  Color: {fileID: 2115893369}
+  Cargaison: {fileID: 1521301643}
+  prefab: {fileID: 0}
 --- !u!1 &1527968128
 GameObject:
   m_ObjectHideFlags: 0
@@ -5448,6 +5491,7 @@ GameObject:
   - component: {fileID: 1686270780}
   - component: {fileID: 1686270779}
   - component: {fileID: 1686270778}
+  - component: {fileID: 1686270781}
   m_Layer: 5
   m_Name: NR
   m_TagString: Untagged
@@ -5537,7 +5581,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1686270781}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -5612,6 +5668,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686270776}
   m_CullTransparentMesh: 1
+--- !u!114 &1686270781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686270776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f129a0b05fd44458af2fd551111167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: {fileID: 0}
+  prefab: {fileID: 0}
 --- !u!1 &1698076376
 GameObject:
   m_ObjectHideFlags: 0
@@ -6500,6 +6570,7 @@ GameObject:
   - component: {fileID: 2115893371}
   - component: {fileID: 2115893370}
   - component: {fileID: 2115893369}
+  - component: {fileID: 2115893372}
   m_Layer: 5
   m_Name: Couleurs
   m_TagString: Untagged
@@ -6586,15 +6657,27 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Vert
       m_Image: {fileID: 0}
-    - m_Text: Marron
+    - m_Text: Blanche
       m_Image: {fileID: 0}
     - m_Text: Jaune
       m_Image: {fileID: 0}
-    - m_Text: Gris
+    - m_Text: Argent
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2115893372}
+        m_TargetAssemblyTypeName: Modif_Vehicule, Assembly-CSharp
+        m_MethodName: "ModifV\xE9hicule"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &2115893370
 MonoBehaviour:
@@ -6634,6 +6717,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115893367}
   m_CullTransparentMesh: 1
+--- !u!114 &2115893372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115893367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1e99ac4f7790842bdf31489a276d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: {fileID: 58241497}
+  Color: {fileID: 2115893369}
+  Cargaison: {fileID: 1521301643}
+  prefab: {fileID: 0}
 --- !u!1 &2136258858
 GameObject:
   m_ObjectHideFlags: 0
