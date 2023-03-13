@@ -41,8 +41,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\object_rotate.cs" />
+     <Compile Include="Assets\Scenes\Scripts\Inscription.cs" />
      <Compile Include="Assets\Camera_moove.cs" />
-     <Compile Include="Assets\Scenes\Scripts\Test_BDD.cs" />
+     <Compile Include="Assets\Scenes\Scripts\Connexion.cs" />
+     <Compile Include="Assets\ray.cs" />
+     <Compile Include="Assets\Scenes\Scripts\BDD.cs" />
      <Compile Include="Assets\Scenes\Scripts\Menu_Home.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
