@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PagePrincipal.unity
     guid: e12fd991751e9ae418f917dd00a86aab
+  - enabled: 1
+    path: Assets/Scenes/ParamVehicule.unity
+    guid: 2808d61541fff2f448a9f4c7c9a691cb
+  - enabled: 1
+    path: Assets/Scenes/ParamEnvironement.unity
+    guid: 12f01015a37d20143bdc93e534cd9026
   m_configObjects: {}

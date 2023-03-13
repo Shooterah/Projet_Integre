@@ -25,6 +25,22 @@ public class Menu_Home : MonoBehaviour
         SceneManager.LoadScene("Mentions_Légale");
     }
 
+      public void OnClickPagePrinc()
+    {
+        SceneManager.LoadScene("PagePrincipal");
+    }
+
+      public void OnClickParamVehicule()
+    {
+        SceneManager.LoadScene("ParamVehicule");
+    }
+
+    
+      public void OnClickParamEnvironement()
+    {
+        SceneManager.LoadScene("ParamEnvironement");
+    }
+
     // Fonction qui permet de load la scène "Accueil"
     public void OnClickRetourMentions()
     {
