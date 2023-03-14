@@ -47,6 +47,7 @@
      <Compile Include="Assets\ray.cs" />
      <Compile Include="Assets\Scripts\Menu_Home.cs" />
      <Compile Include="Assets\Scripts\BDD.cs" />
+     <Compile Include="Assets\Scripts\Modif_Env.cs" />
      <Compile Include="Assets\Scripts\Connexion.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
