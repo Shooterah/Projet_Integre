@@ -62,11 +62,12 @@ CREATE TABLE IF NOT EXISTS `carrosseries` (
 
 DROP TABLE IF EXISTS `clients`;
 CREATE TABLE IF NOT EXISTS `clients` (
-  `idClient` int NOT NULL COMMENT 'Identifiant unique pour chaque client',
+  `idClient` int NOT NULL AUTO_INCREMENT COMMENT 'Identifiant unique pour chaque client',
   `nomEntreprise` varchar(255) DEFAULT NULL COMMENT 'Nom de l''entreprise cliente',
   `mail` varchar(255) DEFAULT NULL COMMENT 'Adresse mail du client',
   `dateInscription` date DEFAULT NULL COMMENT 'Date d''inscription du client',
   `finAbonnement` date DEFAULT NULL COMMENT 'Date de fin d''abonnement du client',
+  `Mdp` varchar(255) DEFAULT NULL COMMENT 'Mdp de l''entreprise cliente',
   PRIMARY KEY (`idClient`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
