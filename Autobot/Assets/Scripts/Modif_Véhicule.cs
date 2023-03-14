@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using TMPro;
+
 
 public class Modif_Vehicule : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class Modif_Vehicule : MonoBehaviour
     [SerializeField]  GameObject roues;
     [SerializeField]  TMP_InputField nb_roue;
 
+    // Voir fonction creer
+    public List<GameObject> objectsToGroup;
 
 
     // Start is called before the first frame update
@@ -221,4 +225,43 @@ public class Modif_Vehicule : MonoBehaviour
         }
             
     }
+
+
+    // Creation d'un prefabrique depuis les objets courants de la page
+    public void FinalVehicle()
+    {
+        string nomPrefab = "FinalVehicle";
+        //string color = Color.options[Color.value].text;
+
+        //print(color);
+    
+        // Trouver tous les GameObjects avec les tags Véhicules et roue
+        GameObject[] objetsVehicules = GameObject.FindGameObjectsWithTag("Véhicule");
+        GameObject[] objetsRoues = GameObject.FindGameObjectsWithTag("Roue");
+
+        // Fusion des tableaux
+        GameObject[] objectsToGroup = new GameObject[objetsVehicules.Length + objetsRoues.Length];
+        objetsVehicules.CopyTo(objectsToGroup, 0);
+        objetsRoues.CopyTo(objectsToGroup, objetsVehicules.Length);
+
+        // L'ekement avec recevant les objets apres fusion
+        GameObject groupObject = new GameObject(nomPrefab);
+
+        objectsToGroup[0].GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/Palette_rouge") as Texture;
+
+        // Définir le GameObject parent comme parent des objets groupés
+        foreach (GameObject obj in objectsToGroup)
+        {
+            obj.transform.parent = groupObject.transform;
+        }
+
+        // Enregistrer le prefab créé dans le dossier Assets/Prefabs
+        PrefabUtility.SaveAsPrefabAsset(groupObject, "Assets/Resources/Prefabs/" + nomPrefab + ".prefab");
+
+        // Détruire le GameObject parent pour éviter de modifier les objets groupés
+        DestroyImmediate(groupObject);
+    
+    }
+
+
 }
