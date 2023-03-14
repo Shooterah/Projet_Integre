@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Class pour menu home
 public class Menu_Home : MonoBehaviour
 {
 
