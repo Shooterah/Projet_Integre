@@ -8,6 +8,7 @@ public class BDD : MonoBehaviour
 {
     // Informations de connection à la base de données
     private string host = "127.0.0.1";
+    // nom de la base de données
     private string dbname = "projet_integre";
     private string username = "root";
     private string password = "";
