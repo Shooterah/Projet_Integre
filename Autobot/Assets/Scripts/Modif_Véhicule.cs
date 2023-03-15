@@ -19,6 +19,8 @@ public class Modif_Vehicule : MonoBehaviour
     // Voir fonction creer
     public List<GameObject> objectsToGroup;
 
+    private static string FinalColor = "bleu";
+
 
     // Start is called before the first frame update
     void Start()
@@ -231,9 +233,9 @@ public class Modif_Vehicule : MonoBehaviour
     public void FinalVehicle()
     {
         string nomPrefab = "FinalVehicle";
-        //string color = Color.options[Color.value].text;
 
-        //print(color);
+        // Stock la derniere couleur connue
+        FinalColor = Color.options[Color.value].text;
     
         // Trouver tous les GameObjects avec les tags Véhicules et roue
         GameObject[] objetsVehicules = GameObject.FindGameObjectsWithTag("Véhicule");
@@ -247,8 +249,6 @@ public class Modif_Vehicule : MonoBehaviour
         // L'ekement avec recevant les objets apres fusion
         GameObject groupObject = new GameObject(nomPrefab);
 
-        objectsToGroup[0].GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/Palette_rouge") as Texture;
-
         // Définir le GameObject parent comme parent des objets groupés
         foreach (GameObject obj in objectsToGroup)
         {
@@ -261,6 +261,10 @@ public class Modif_Vehicule : MonoBehaviour
         // Détruire le GameObject parent pour éviter de modifier les objets groupés
         DestroyImmediate(groupObject);
     
+    }
+
+    public static string getFinalColor(){
+        return FinalColor;
     }
 
 
