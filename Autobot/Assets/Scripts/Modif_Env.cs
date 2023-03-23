@@ -28,7 +28,7 @@ public class Modif_Env : MonoBehaviour
             instance.transform.Rotate(-90, 100, -100);
             instance.tag = "Environement";
             instance.GetComponent<MeshRenderer>().materials = SupprIndesirable(instance);
-            Change_meteo(instance, "Soleil");
+            Change_meteo_etat(instance, "Soleil","RouteNeuve");
         }
         // inclinaison par défaut
         Inclinaison_route.text = "0";
@@ -79,7 +79,7 @@ public class Modif_Env : MonoBehaviour
     instance.transform.localScale = new Vector3(1000,largeur + 1000, 1000);
     instance.tag = "Environement";
     instance.GetComponent<MeshRenderer>().materials = SupprIndesirable(instance);
-    Change_meteo(instance, meteo);
+    Change_meteo_etat(instance, meteo,etat_route);
     }
 
     //********************************Fonctions*************************************************//
@@ -99,7 +99,7 @@ public class Modif_Env : MonoBehaviour
         }
         return newMaterials;
     }
-    public void Change_meteo(GameObject instance, string meteo){
+    public void Change_meteo_etat(GameObject instance, string meteo, string etat_route){
         Material[] newprefab = instance.GetComponent<MeshRenderer>().materials;
         particle = Resources.Load("Prefabs/"+meteo) as GameObject;
         GameObject instance2 = Instantiate(particle, new Vector3(-60, 50, 105), Quaternion.identity) as GameObject;
@@ -108,6 +108,7 @@ public class Modif_Env : MonoBehaviour
         newprefab[0] = Resources.Load("Textures/rock_"+meteo) as Material;
         newprefab[1] = Resources.Load("Textures/bluegreen_"+meteo) as Material;
         newprefab[2] = Resources.Load("Textures/yellowgreen_"+meteo) as Material;
+        newprefab[5] = Resources.Load("Textures/etat_"+etat_route) as Material;
         instance.GetComponent<MeshRenderer>().materials = newprefab;
         }
 }
