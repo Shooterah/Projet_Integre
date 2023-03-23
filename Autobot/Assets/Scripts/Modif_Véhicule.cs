@@ -43,10 +43,13 @@ public class Modif_Vehicule : MonoBehaviour
             // charger une prefab provenant du fichier scenes prefab
             roues = Resources.Load("Prefabs/Roue1") as GameObject;
             // instancier la prefab avec un tag Roue
-            GameObject instance2 = Instantiate(roues, new Vector3(-27, -12, 90), Quaternion.identity) as GameObject;
+            GameObject instance2 = Instantiate(roues, new Vector3(-30, -11, 90), Quaternion.identity) as GameObject;
             instance2.tag = "Roue";
-            GameObject instance3 = Instantiate(roues, new Vector3(-87, -12, 90), Quaternion.identity) as GameObject;
+            GameObject instance3 = Instantiate(roues, new Vector3(-79, -11, 90), Quaternion.identity) as GameObject;
             instance3.tag = "Roue";
+        }
+        if (GameObject.Find("FinalVehicle") == null){
+            FinalVehicle();
         }
     }
 
@@ -103,7 +106,7 @@ public class Modif_Vehicule : MonoBehaviour
             GameObject instance2 = Instantiate(conteneur, new Vector3(-50, 0, 105), Quaternion.identity) as GameObject;
             instance2.tag = "Véhicule";
         }else if(cargaison == "Conteneur2"){
-            GameObject instance2 = Instantiate(conteneur, new Vector3(-60, 10, 105), Quaternion.identity) as GameObject;
+            GameObject instance2 = Instantiate(conteneur, new Vector3(-55,5, 105), Quaternion.identity) as GameObject;
             instance2.tag = "Véhicule";
         }
     }
@@ -174,9 +177,9 @@ public class Modif_Vehicule : MonoBehaviour
             nb_roue.text = "4";
             // addapter les roues en fonction du véhicule
             if(type == "Bus"){
-                GameObject instance3 = Instantiate(roues, new Vector3(-26, -12, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-30, -11, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-86, -12, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-79, -11, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }else if(type == "Camion1"){
                 GameObject instance3 = Instantiate(roues, new Vector3(-20, -14, 90), Quaternion.identity) as GameObject;
@@ -225,13 +228,18 @@ public class Modif_Vehicule : MonoBehaviour
                 instance4.tag = "Roue";
             }
         }
-            
+        FinalVehicle();
     }
 
 
     // Creation d'un prefabrique depuis les objets courants de la page
     public void FinalVehicle()
     {
+        // detruit l'objet avec le nom FinalVehicle si il existe
+        if (GameObject.Find("FinalVehicle") != null){
+            Destroy(GameObject.Find("FinalVehicle"));
+        }
+
         string nomPrefab = "FinalVehicle";
 
         // Stock la derniere couleur connue
@@ -254,13 +262,6 @@ public class Modif_Vehicule : MonoBehaviour
         {
             obj.transform.parent = groupObject.transform;
         }
-
-        // Enregistrer le prefab créé dans le dossier Assets/Prefabs
-        PrefabUtility.SaveAsPrefabAsset(groupObject, "Assets/Resources/Prefabs/" + nomPrefab + ".prefab");
-
-        // Détruire le GameObject parent pour éviter de modifier les objets groupés
-        DestroyImmediate(groupObject);
-    
     }
 
     public static string getFinalColor(){

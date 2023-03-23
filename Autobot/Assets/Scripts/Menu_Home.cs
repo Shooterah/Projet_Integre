@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 // Class pour menu home
 public class Menu_Home : MonoBehaviour
 {
@@ -28,7 +27,7 @@ public class Menu_Home : MonoBehaviour
 
       public void OnClickPagePrinc()
     {
-        SceneManager.LoadScene("PagePrincipal");
+        SceneManager.LoadScene("PagePrincipal",LoadSceneMode.Additive);
     }
 
       public void OnClickParamVehicule()

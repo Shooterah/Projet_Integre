@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Principale : MonoBehaviour
 {
@@ -17,20 +18,15 @@ public class Principale : MonoBehaviour
             color = "Bleu";
         }
 
-        // charger une prefab provenant du fichier scenes prefab
-        GameObject prefab = Resources.Load("Prefabs/" + nomPrefab) as GameObject;
-        
-        if(prefab != null){
+        //cherche l'objet finalVehicle dans la scène ParamVehicule
+        GameObject myObject = GameObject.Find(nomPrefab);
 
-            // instancier la prefab
-            GameObject instance = Instantiate(prefab, new Vector3(50, 0, 0), Quaternion.identity) as GameObject;
-
-            // changer la texture du véhicule en fonction de la couleur
-            // Recupere la prefab, puis recupere la premiere valeur (carosserie)
-            // Enfin change sa couleur en fonction de la couleur instanciée par la dernière fenetre (cf. Modif_Vehicule) 
-            instance.transform.GetChild(0).GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/Palette_"+color) as Texture;
-
-
+        if(myObject != null){
+            Scene scene = SceneManager.GetSceneByName("PagePrincipal");
+            GameObject obj = Instantiate(myObject,new Vector3(100,-20,0), Quaternion.identity, scene.GetRootGameObjects()[4].transform);
+            SceneManager.UnloadSceneAsync("ParamVehicule");
+            obj.transform.GetChild(0).GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/Palette_"+color) as Texture;
+            Destroy(myObject);
         }
     }
 

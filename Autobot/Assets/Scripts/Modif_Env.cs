@@ -23,7 +23,7 @@ public class Modif_Env : MonoBehaviour
             // charger une prefab provenant du fichier scenes prefab
             prefab = Resources.Load("Prefabs/Environement") as GameObject;
             // instancier la prefab avec un tag Véhicule
-            instance = Instantiate(prefab, new Vector3(-50, -25, 105), Quaternion.identity) as GameObject;
+            instance = Instantiate(prefab, new Vector3(-40, -30, 105), Quaternion.identity) as GameObject;
             // rotation de la prefab -100 sur l'axe x
             instance.transform.Rotate(-90, 100, -100);
             instance.tag = "Environement";
@@ -74,7 +74,7 @@ public class Modif_Env : MonoBehaviour
 
     // changer les valeurs de la prefab
     prefab = Resources.Load("Prefabs/Environement") as GameObject;
-    instance = Instantiate(prefab, new Vector3(-50, -25, 105), Quaternion.identity) as GameObject;
+    instance = Instantiate(prefab, new Vector3(-40, -30, 105), Quaternion.identity) as GameObject;
     instance.transform.Rotate(-90-inclinaison, 100, -100);
     instance.transform.localScale = new Vector3(1000,largeur + 1000, 1000);
     instance.tag = "Environement";
