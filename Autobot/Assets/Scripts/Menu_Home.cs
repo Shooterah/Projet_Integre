@@ -32,19 +32,18 @@ public class Menu_Home : MonoBehaviour
 
       public void OnClickParamVehicule()
     {
-        SceneManager.LoadScene("ParamVehicule");
+        SceneManager.LoadScene("ParamVehicule",LoadSceneMode.Additive);
     }
 
     
       public void OnClickParamEnvironement()
     {
-        SceneManager.LoadScene("ParamEnvironement");
+        SceneManager.LoadScene("ParamEnvironement",LoadSceneMode.Additive);
     }
 
     // Fonction qui permet de load la scène "Accueil"
     public void OnClickRetourMentions()
     {
-        Debug.Log("Accueil");
         SceneManager.LoadScene("Accueil");
     }
 

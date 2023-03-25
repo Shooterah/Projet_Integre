@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class Modif_Vehicule : MonoBehaviour
@@ -25,6 +26,22 @@ public class Modif_Vehicule : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //********************************************Récuperation pour sauvegarde de l'environement********************************************//
+        // uniquement si l'objet Environement de la scene est vide
+    
+        string env = "FinalEnvironement";
+        if(GameObject.Find("NewFinalEnvironement") == null && GameObject.Find(env) != null){ 
+            GameObject myObjectenv = GameObject.Find(env);
+            Scene scene = SceneManager.GetSceneByName("ParamVehicule");
+            GameObject obj1 = Instantiate(myObjectenv,new Vector3(100000,-20000,0), Quaternion.identity, scene.GetRootGameObjects()[4].transform);
+            SceneManager.UnloadSceneAsync("PagePrincipal");
+            obj1.name = "NewFinalEnvironement";
+        }else{
+            SceneManager.UnloadSceneAsync("PagePrincipal");  
+        }
+
+
+        //********************************************Creation d'un Objet par défaut********************************************//
         // uniquement si le tag Véhicule n'existe pas
         if (GameObject.FindGameObjectsWithTag("Véhicule").Length == 0)
         {

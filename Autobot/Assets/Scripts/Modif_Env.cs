@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class Modif_Env : MonoBehaviour
@@ -18,8 +20,20 @@ public class Modif_Env : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         if (GameObject.FindGameObjectsWithTag("Environement").Length == 0)
-        {
+        string vehicule = "FinalVehicle";
+        if(GameObject.Find("NewFinalVehicle") == null && GameObject.Find(vehicule) != null){ 
+            GameObject myObjectvehicule = GameObject.Find(vehicule);
+            Scene scene = SceneManager.GetSceneByName("ParamEnvironement");
+            GameObject obj1 = Instantiate(myObjectvehicule,new Vector3(100000,-20000,0), Quaternion.identity, scene.GetRootGameObjects()[4].transform);
+            SceneManager.UnloadSceneAsync("PagePrincipal");
+            obj1.name = "NewFinalVehicle";
+        }else{
+            SceneManager.UnloadSceneAsync("PagePrincipal");  
+        }
+
+
+
+        if (GameObject.FindGameObjectsWithTag("Environement").Length == 0){
             // charger une prefab provenant du fichier scenes prefab
             prefab = Resources.Load("Prefabs/Environement") as GameObject;
             // instancier la prefab avec un tag Véhicule
@@ -34,6 +48,9 @@ public class Modif_Env : MonoBehaviour
         Inclinaison_route.text = "0";
         // largeur par défaut
         Largeur_route.text = "0";
+        if (GameObject.Find("FinalEnvironement") == null){
+        FinalEnv();
+        }
     }
 
     public void ModifEnvironement(){
@@ -80,6 +97,7 @@ public class Modif_Env : MonoBehaviour
     instance.tag = "Environement";
     instance.GetComponent<MeshRenderer>().materials = SupprIndesirable(instance);
     Change_meteo_etat(instance, meteo,etat_route);
+    FinalEnv();
     }
 
     //********************************Fonctions*************************************************//
@@ -111,4 +129,32 @@ public class Modif_Env : MonoBehaviour
         newprefab[5] = Resources.Load("Textures/etat_"+etat_route) as Material;
         instance.GetComponent<MeshRenderer>().materials = newprefab;
         }
+
+        public void FinalEnv()
+    {
+        // detruit l'objet avec le nom FinalVehicle si il existe
+        if (GameObject.Find("FinalEnvironement") != null){
+            Destroy(GameObject.Find("FinalEnvironement"));
+        }
+
+        string nomPrefab = "FinalEnvironement";
+    
+        // Trouver tous les GameObjects avec les tags Véhicules et roue
+        GameObject[] objetsEnv = GameObject.FindGameObjectsWithTag("Environement");
+        GameObject[] objetsPart = GameObject.FindGameObjectsWithTag("Particule");
+
+        // Fusion des tableaux
+        GameObject[] objectsToGroup = new GameObject[objetsEnv.Length + objetsPart.Length];
+        objetsEnv.CopyTo(objectsToGroup, 0);
+        objetsPart.CopyTo(objectsToGroup, objetsEnv.Length);
+
+        // L'ekement avec recevant les objets apres fusion
+        GameObject groupObject = new GameObject(nomPrefab);
+
+        // Définir le GameObject parent comme parent des objets groupés
+        foreach (GameObject obj in objectsToGroup)
+        {
+            obj.transform.parent = groupObject.transform;
+        }
+    }
 }
