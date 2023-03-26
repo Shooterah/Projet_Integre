@@ -30,27 +30,7 @@ public class Modif_Env : MonoBehaviour
         }else{
             SceneManager.UnloadSceneAsync("PagePrincipal");  
         }
-
-
-
-        if (GameObject.FindGameObjectsWithTag("Environement").Length == 0){
-            // charger une prefab provenant du fichier scenes prefab
-            prefab = Resources.Load("Prefabs/Environement") as GameObject;
-            // instancier la prefab avec un tag Véhicule
-            instance = Instantiate(prefab, new Vector3(-40, -30, 105), Quaternion.identity) as GameObject;
-            // rotation de la prefab -100 sur l'axe x
-            instance.transform.Rotate(-90, 100, -100);
-            instance.tag = "Environement";
-            instance.GetComponent<MeshRenderer>().materials = SupprIndesirable(instance);
-            Change_meteo_etat(instance, "Soleil","RouteNeuve");
-        }
-        // inclinaison par défaut
-        Inclinaison_route.text = "0";
-        // largeur par défaut
-        Largeur_route.text = "0";
-        if (GameObject.Find("FinalEnvironement") == null){
-        FinalEnv();
-        }
+        
     }
 
     public void ModifEnvironement(){

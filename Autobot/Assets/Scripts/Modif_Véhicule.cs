@@ -39,35 +39,6 @@ public class Modif_Vehicule : MonoBehaviour
         }else{
             SceneManager.UnloadSceneAsync("PagePrincipal");  
         }
-
-
-        //********************************************Creation d'un Objet par défaut********************************************//
-        // uniquement si le tag Véhicule n'existe pas
-        if (GameObject.FindGameObjectsWithTag("Véhicule").Length == 0)
-        {
-            // charger une prefab provenant du fichier scenes prefab
-            prefab = Resources.Load("Prefabs/bus") as GameObject;
-            // instancier la prefab avec un tag Véhicule
-            GameObject instance = Instantiate(prefab, new Vector3(-50, 0, 105), Quaternion.identity) as GameObject;
-            instance.tag = "Véhicule";
-            // changer la texture du véhicule en fonction de la couleur choisie
-            instance.GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/Palette_Bleu") as Texture;
-        }
-        // uniquement si le tag Roue n'existe pas
-        if (GameObject.FindGameObjectsWithTag("Roue").Length == 0)
-        {
-            nb_roue.text = "4";
-            // charger une prefab provenant du fichier scenes prefab
-            roues = Resources.Load("Prefabs/Roue1") as GameObject;
-            // instancier la prefab avec un tag Roue
-            GameObject instance2 = Instantiate(roues, new Vector3(-30, -11, 90), Quaternion.identity) as GameObject;
-            instance2.tag = "Roue";
-            GameObject instance3 = Instantiate(roues, new Vector3(-79, -11, 90), Quaternion.identity) as GameObject;
-            instance3.tag = "Roue";
-        }
-        if (GameObject.Find("FinalVehicle") == null){
-            FinalVehicle();
-        }
     }
 
     public void ModifVéhicule(){
@@ -154,38 +125,38 @@ public class Modif_Vehicule : MonoBehaviour
         // instancier la prefab avec un tag roue 
         if(nb == 6){
             if(type == "Camion1"){
-            GameObject instance3 = Instantiate(roues, new Vector3(-20, -14, 90), Quaternion.identity) as GameObject;
+            GameObject instance3 = Instantiate(roues, new Vector3(-22, -14, 90), Quaternion.identity) as GameObject;
             instance3.tag = "Roue";
-            GameObject instance4 = Instantiate(roues, new Vector3(-80, -14, 90), Quaternion.identity) as GameObject;
+            GameObject instance4 = Instantiate(roues, new Vector3(-82, -14, 90), Quaternion.identity) as GameObject;
             instance4.tag = "Roue";
-            GameObject instance5 = Instantiate(roues, new Vector3(-40, -15, 90), Quaternion.identity) as GameObject;
+            GameObject instance5 = Instantiate(roues, new Vector3(-42, -15, 90), Quaternion.identity) as GameObject;
             instance5.tag = "Roue";
             }else if(type == "Camion2"){
-            GameObject instance3 = Instantiate(roues, new Vector3(-16, -14, 90), Quaternion.identity) as GameObject;
+            GameObject instance3 = Instantiate(roues, new Vector3(-18, -14, 90), Quaternion.identity) as GameObject;
             instance3.tag = "Roue";
-            GameObject instance4 = Instantiate(roues, new Vector3(-80, -14, 90), Quaternion.identity) as GameObject;
+            GameObject instance4 = Instantiate(roues, new Vector3(-82, -14, 90), Quaternion.identity) as GameObject;
             instance4.tag = "Roue";
-            GameObject instance5 = Instantiate(roues, new Vector3(-37, -14, 90), Quaternion.identity) as GameObject;
+            GameObject instance5 = Instantiate(roues, new Vector3(-39, -14, 90), Quaternion.identity) as GameObject;
             instance5.tag = "Roue";
             }
         }else if(nb == 8){
             if(type == "Camion1"){
-            GameObject instance3 = Instantiate(roues, new Vector3(-20, -14, 90), Quaternion.identity) as GameObject;
+            GameObject instance3 = Instantiate(roues, new Vector3(-22, -14, 90), Quaternion.identity) as GameObject;
             instance3.tag = "Roue";
-            GameObject instance4 = Instantiate(roues, new Vector3(-80, -14, 90), Quaternion.identity) as GameObject;
+            GameObject instance4 = Instantiate(roues, new Vector3(-82, -14, 90), Quaternion.identity) as GameObject;
             instance4.tag = "Roue";
-            GameObject instance5 = Instantiate(roues, new Vector3(-40, -15, 90), Quaternion.identity) as GameObject;
+            GameObject instance5 = Instantiate(roues, new Vector3(-42, -15, 90), Quaternion.identity) as GameObject;
             instance5.tag = "Roue";
-            GameObject instance6 = Instantiate(roues, new Vector3(-69, -16, 90), Quaternion.identity) as GameObject;
+            GameObject instance6 = Instantiate(roues, new Vector3(-71, -16, 90), Quaternion.identity) as GameObject;
             instance6.tag = "Roue";
         }else if(type == "Camion2"){
-                GameObject instance3 = Instantiate(roues, new Vector3(-16, -14, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-18, -14, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-80, -14, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-82, -14, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
-                GameObject instance5 = Instantiate(roues, new Vector3(-37, -14, 90), Quaternion.identity) as GameObject;
+                GameObject instance5 = Instantiate(roues, new Vector3(-39, -14, 90), Quaternion.identity) as GameObject;
                 instance5.tag = "Roue";
-                GameObject instance6 = Instantiate(roues, new Vector3(-66, -15, 90), Quaternion.identity) as GameObject;
+                GameObject instance6 = Instantiate(roues, new Vector3(-68, -15, 90), Quaternion.identity) as GameObject;
                 instance6.tag = "Roue";
         }
         }else{
@@ -194,54 +165,54 @@ public class Modif_Vehicule : MonoBehaviour
             nb_roue.text = "4";
             // addapter les roues en fonction du véhicule
             if(type == "Bus"){
-                GameObject instance3 = Instantiate(roues, new Vector3(-30, -11, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-32, -11, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-79, -11, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-81, -11, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }else if(type == "Camion1"){
-                GameObject instance3 = Instantiate(roues, new Vector3(-20, -14, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-22, -14, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-80, -14, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-82, -14, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }else if(type == "Camion2"){
-                GameObject instance3 = Instantiate(roues, new Vector3(-16, -14, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-18, -14, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-80, -14, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-82, -14, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }
             else if (type == "Voiture1")
             {
-                GameObject instance3 = Instantiate(roues, new Vector3(-33, -6, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-35, -6, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-66, -6, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-68, -6, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }
             else if (type == "Voiture2")
             {
-                GameObject instance3 = Instantiate(roues, new Vector3(-30, -4, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-32, -4, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-67, -4, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-69, -4, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }
             else if (type == "Voiture3")
             {
-                GameObject instance3 = Instantiate(roues, new Vector3(-33, -5, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-35, -5, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-65, -4, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-67, -4, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }
             else if (type == "Voiture4")
             {
-                GameObject instance3 = Instantiate(roues, new Vector3(-27, -12, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-29, -12, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-87, -12, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-89, -12, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }
             else if (type == "Camionnette")
             {
-                GameObject instance3 = Instantiate(roues, new Vector3(-32, -11, 90), Quaternion.identity) as GameObject;
+                GameObject instance3 = Instantiate(roues, new Vector3(-34, -11, 90), Quaternion.identity) as GameObject;
                 instance3.tag = "Roue";
-                GameObject instance4 = Instantiate(roues, new Vector3(-65, -11, 90), Quaternion.identity) as GameObject;
+                GameObject instance4 = Instantiate(roues, new Vector3(-67, -11, 90), Quaternion.identity) as GameObject;
                 instance4.tag = "Roue";
             }
         }
