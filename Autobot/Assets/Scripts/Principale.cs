@@ -6,6 +6,10 @@ using TMPro;
 
 public class Principale : MonoBehaviour
 {
+    [SerializeField] int poids;
+    [SerializeField] int supporté;
+    [SerializeField] int Largeur_route;
+    [SerializeField] int largeur_vehicule;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,34 +29,41 @@ public class Principale : MonoBehaviour
 
         if(myObjectenvironement != null){
             GameObject obj2 = Instantiate(myObjectenvironement,new Vector3(45,20,0), Quaternion.identity, scene.GetRootGameObjects()[5].transform);
+            obj2.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
             obj2.name = "FinalEnvironement";
             Destroy(myObjectenvironement);
         }
         if(myObjectvehicule != null){
-            GameObject obj1 = Instantiate(myObjectvehicule,new Vector3(60,15,0), Quaternion.identity, scene.GetRootGameObjects()[4].transform);
+            GameObject obj1 = Instantiate(myObjectvehicule,new Vector3(60,15,10), Quaternion.identity, scene.GetRootGameObjects()[4].transform);
             if (myObjectenvironement != null){
                 GameObject inclinaison = GameObject.Find("Inclinaison");
                 obj1.transform.Rotate(0,-10,int.Parse(inclinaison.GetComponent<TMP_InputField>().text));
                 obj1.transform.Translate(0,int.Parse(inclinaison.GetComponent<TMP_InputField>().text),0);
+                obj1.transform.localScale = new Vector3(0.8f,0.8f,0.8f);
             }else{
             obj1.transform.Rotate(0, -10, 0);
+            obj1.transform.localScale = new Vector3(0.8f,0.8f,0.8f);
             }
             obj1.name = "FinalVehicle";
             Destroy(myObjectvehicule);
         }
         if(myObjectenvironement2 != null){
             GameObject obj2 = Instantiate(myObjectenvironement2,new Vector3(45,20,0), Quaternion.identity, scene.GetRootGameObjects()[5].transform);
+            obj2.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
             obj2.name = "FinalEnvironement";
             Destroy(myObjectenvironement2);
         }
         if(myObjectvehicule2 != null){
-            GameObject obj1 = Instantiate(myObjectvehicule2,new Vector3(60,15,0), Quaternion.identity, scene.GetRootGameObjects()[4].transform);
+            GameObject obj1 = Instantiate(myObjectvehicule2,new Vector3(60,15,10), Quaternion.identity, scene.GetRootGameObjects()[4].transform);
             if (myObjectenvironement != null){
                 GameObject inclinaison = GameObject.Find("Inclinaison");
                 obj1.transform.Rotate(0,-10,int.Parse(inclinaison.GetComponent<TMP_InputField>().text));
                 obj1.transform.Translate(0,int.Parse(inclinaison.GetComponent<TMP_InputField>().text),0);
+                // reduction de la taiille
+                obj1.transform.localScale = new Vector3(0.8f,0.8f,0.8f);
             }else{
             obj1.transform.Rotate(0, -10, 0);
+            obj1.transform.localScale = new Vector3(0.8f,0.8f,0.8f);
             }
             obj1.name = "FinalVehicle";
             Destroy(myObjectvehicule2);
@@ -71,11 +82,10 @@ public class Principale : MonoBehaviour
         // récupère l'objet finalVehicle dans la scène PagePrincipal
         GameObject FinalVec = GameObject.Find("FinalVec");
         GameObject FinalEnv = GameObject.Find("FinalEnv");
-
-        int poids = 0;
-        int supporté = 0;
-        int Largeur_route = 0;
-        int largeur_vehicule = 0;
+        poids = 0;
+        supporté = 0;
+        Largeur_route = 0;
+        largeur_vehicule = 0;
 
         if (FinalVec.transform.childCount > 0 && FinalEnv.transform.childCount > 0){
             // récupère le premier enfant de finalVehicle dans une variable

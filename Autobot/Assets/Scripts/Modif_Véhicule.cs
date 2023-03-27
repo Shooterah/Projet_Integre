@@ -94,7 +94,7 @@ public class Modif_Vehicule : MonoBehaviour
             GameObject instance2 = Instantiate(conteneur, new Vector3(-50, 0, 105), Quaternion.identity) as GameObject;
             instance2.tag = "Véhicule";
         }else if(cargaison == "Conteneur2"){
-            GameObject instance2 = Instantiate(conteneur, new Vector3(-55,5, 105), Quaternion.identity) as GameObject;
+            GameObject instance2 = Instantiate(conteneur, new Vector3(-65,5, 105), Quaternion.identity) as GameObject;
             instance2.tag = "Véhicule";
         }
     }
